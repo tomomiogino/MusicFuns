@@ -53,3 +53,11 @@ https://docs.google.com/spreadsheets/d/1__nubhpjCkzqDlt746cDpGtMPEZrJeU6qRB7qcpN
 
 ## 使用予定API
 - [Spotify Web API](https://developer.spotify.com/documentation/web-api/)
+
+## 課題要件
+* 就業Termからの技術
+  * コメント機能（投稿/編集/削除。投稿失敗時にエラーメッセージをAjaxで出力）
+  * AWS
+
+* カリキュラム外の技術
+  * Spotify Web API (チャンネルの作成/検索機能に使用)
