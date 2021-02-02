@@ -60,4 +60,6 @@ https://docs.google.com/spreadsheets/d/1__nubhpjCkzqDlt746cDpGtMPEZrJeU6qRB7qcpN
   * AWS
 
 * カリキュラム外の技術
-  * Spotify Web API (チャンネルの作成/検索機能に使用)
+  * Spotify Web API
+  * gem 'rspotify'  
+  (チャンネルの作成/検索機能に使用)
