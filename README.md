@@ -1,7 +1,7 @@
 # Music Funs
 
 ## 概要
-「気の合う音楽仲間が周りにいない」、コロナ禍で「音楽で盛り上がれる場がない」、そんな方達の悩みを解決するアプリケーションです。
+「気の合う音楽仲間が周りにいない」、コロナ禍で「音楽で盛り上がれる場がない」、そんな方達の悩みを解決するアプリケーションです。  
 同じアーティストのファン同士のコミュニティ(チャンネル)を作成できるので、どこでも好きな時に気の合う仲間とチャンネル内でコミュニケーションをとることができます。
 
 ## コンセプト
@@ -39,17 +39,17 @@ https://docs.google.com/spreadsheets/d/1__nubhpjCkzqDlt746cDpGtMPEZrJeU6qRB7qcpN
 
 
 ## 使用予定Gem
-dotenv-rails
-bcrypt
-kaminari
-carrierwave
-mini_magick
-rspotify
-wikipedia-client
-fog-aws
-unicorn
-mini_racer
-mini_racer, platforms: :ruby
+- dotenv-rails
+- bcrypt
+- kaminari
+- carrierwave
+- mini_magick
+- rspotify
+- wikipedia-client
+- fog-aws
+- unicorn
+- mini_racer
+- mini_racer, platforms: :ruby
 
 ## 使用予定API
-[Spotify Web API](https://developer.spotify.com/documentation/web-api/)
+- [Spotify Web API](https://developer.spotify.com/documentation/web-api/)
