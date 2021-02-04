@@ -14,11 +14,13 @@ Ruby 2.6.5 Rails 5.2.4.4
 - [ ] ユーザー登録機能
 - [ ] ログイン機能
 - [ ] ユーザープロフィール編集機能
+- [ ] ユーザーフォロー機能
+- [ ] アーティストページ作成機能
+- [ ] アーティスト一覧・検索機能
+- [ ] アーティストファン登録機能
 - [ ] チャンネル作成・保存機能
-- [ ] チャンネル登録(お気に入り)機能
-- [ ] チャンネル検索機能
 - [ ] チャンネルへのコメント投稿機能
-- [ ] チャンネル一覧表示機能
+
 
 
 ## カタログ設計
@@ -37,7 +39,6 @@ https://docs.google.com/spreadsheets/d/1__nubhpjCkzqDlt746cDpGtMPEZrJeU6qRB7qcpN
 https://docs.google.com/spreadsheets/d/1__nubhpjCkzqDlt746cDpGtMPEZrJeU6qRB7qcpNRHk/edit#gid=98512661
 
 
-
 ## 使用予定Gem
 - dotenv-rails
 - bcrypt
@@ -46,10 +47,6 @@ https://docs.google.com/spreadsheets/d/1__nubhpjCkzqDlt746cDpGtMPEZrJeU6qRB7qcpN
 - mini_magick
 - rspotify
 - wikipedia-client
-- fog-aws
-- unicorn
-- mini_racer
-- mini_racer, platforms: :ruby
 
 ## 使用予定API
 - [Spotify Web API](https://developer.spotify.com/documentation/web-api/)
@@ -57,9 +54,9 @@ https://docs.google.com/spreadsheets/d/1__nubhpjCkzqDlt746cDpGtMPEZrJeU6qRB7qcpN
 ## 課題要件
 * 就業Termからの技術
   * コメント機能（投稿/編集/削除。投稿失敗時にエラーメッセージをAjaxで出力）
-  * AWS
+  * フォロー機能
 
 * カリキュラム外の技術
   * Spotify Web API
   * gem 'rspotify'  
-  (チャンネルの作成/検索機能に使用)
+  (アーティストページの作成/検索機能に使用)
