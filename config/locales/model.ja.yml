@@ -1,3 +1,13 @@
 ja:
   activerecord:
     models:
+      user: ユーザー
+    attributes:
+      user:
+        id: ユーザーID
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード(確認)
+        profile_comment: プロフィールコメント
+        image: プロフィール画像

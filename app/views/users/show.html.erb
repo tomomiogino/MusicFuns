@@ -1,0 +1,28 @@
+<h2><%= t('view.user.show user', user: @user.name) %></h2>
+<table class="table">
+  <tbody class="table show">
+    <div class="user_image">
+      <% if @user.image && @user.image.url %>
+        <%= image_tag(@user.image.url) %>
+      <% else %>
+        <%= image_tag("default.png") %>
+      <% end %>
+    </div>
+    <tr>
+      <th><%= User.human_attribute_name(:name) %></th>
+      <td><%= @user.name %></td>
+    </tr>
+
+      <tr>
+        <th><%= User.human_attribute_name(:email) %></th>
+        <td><%= @user.email %></td>
+      </tr>
+
+    <tr>
+      <th><%= User.human_attribute_name(:profile_comment) %></th>
+      <td><%= @user.profile_comment %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to t('link.user.edit'), edit_user_path(@user) %>
