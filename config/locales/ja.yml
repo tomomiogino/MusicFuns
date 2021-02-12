@@ -207,10 +207,15 @@ ja:
       user:
         create: "%{user}さん、ユーザー登録が完了しました！"
         update: "プロフィールを更新しました！"
+      session:
+        create: "ログインしました！"
     alert:
       user:
         create: "登録に失敗しました"
         update: "プロフィールの更新に失敗しました"
+      session:
+        create: "ログインに失敗しました"
+        login is needed: "ログインが必要です"
   view:
     user:
       new user: "新規登録"
