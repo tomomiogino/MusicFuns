@@ -226,6 +226,10 @@ ja:
       login: "ログイン"
       email: "メールアドレス"
       password: "パスワード"
+    artist:
+      index: "アーティストページ一覧"
+      search: "検索"
+      search by artist: "アーティスト名で検索"
   link:
     user:
       new: "新規登録"

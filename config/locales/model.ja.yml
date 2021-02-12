@@ -12,7 +12,7 @@ ja:
         password_confirmation: パスワード(確認)
         profile_comment: プロフィールコメント
         image: プロフィール画像
-      artist: アーティスト
+      artist:
         id: アーティストID
         name: アーティスト名
         image: アーティスト画像
