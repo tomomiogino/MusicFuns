@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
+
   def index
   end
 
@@ -20,11 +21,15 @@ class UsersController < ApplicationController
   def show
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
-
+    if @user.update(user_params)
+      redirect_to user_path(@user), flash: {success: t('flash.success.user.update')}
+    else
+      flash.now[:danger] = t('flash.alert.user.update')
+      render :edit
+    end
   end
 
   private
