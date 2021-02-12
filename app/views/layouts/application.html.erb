@@ -10,6 +10,12 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <%= link_to t('link.session.log out'), session_path(current_user.id), method: :delete %>
+    <% else %>
+      <%= link_to t('link.user.new'), new_user_path %>
+      <%= link_to t('link.session.login'), new_session_path %>
+    <% end %>
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "alert alert-#{key}") %>
     <% end %>

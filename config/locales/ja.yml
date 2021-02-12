@@ -207,15 +207,29 @@ ja:
       user:
         create: "%{user}さん、ユーザー登録が完了しました！"
         update: "プロフィールを更新しました！"
+      session:
+        create: "ログインしました！"
+        destroy: "ログアウトしました"
     alert:
       user:
         create: "登録に失敗しました"
         update: "プロフィールの更新に失敗しました"
+      session:
+        create: "ログインに失敗しました"
+        login is needed: "ログインが必要です"
   view:
     user:
       new user: "新規登録"
       show user: "%{user}さんのページ"
       edit user: "プロフィールを編集する"
+    session:
+      login: "ログイン"
+      email: "メールアドレス"
+      password: "パスワード"
   link:
     user:
+      new: "新規登録"
       edit: "プロフィールを編集"
+      not have an account: "登録がまだの方はこちら"
+    session:
+      log out: "ログアウト"
