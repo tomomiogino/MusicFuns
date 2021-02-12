@@ -209,6 +209,7 @@ ja:
         update: "プロフィールを更新しました！"
       session:
         create: "ログインしました！"
+        destroy: "ログアウトしました"
     alert:
       user:
         create: "登録に失敗しました"
@@ -227,5 +228,8 @@ ja:
       password: "パスワード"
   link:
     user:
+      new: "新規登録"
       edit: "プロフィールを編集"
       not have an account: "登録がまだの方はこちら"
+    session:
+      log out: "ログアウト"
