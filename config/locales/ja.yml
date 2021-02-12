@@ -206,15 +206,16 @@ ja:
     success:
       user:
         create: "%{user}さん、ユーザー登録が完了しました！"
-        update: "ユーザー情報を更新しました！"
+        update: "プロフィールを更新しました！"
     alert:
       user:
         create: "登録に失敗しました"
-        update: "ユーザー情報の更新に失敗しました"
+        update: "プロフィールの更新に失敗しました"
   view:
     user:
       new user: "新規登録"
       show user: "%{user}さんのページ"
+      edit user: "プロフィールを編集する"
   link:
     user:
       edit: "プロフィールを編集"
