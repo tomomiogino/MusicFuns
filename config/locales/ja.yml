@@ -216,6 +216,11 @@ ja:
       new user: "新規登録"
       show user: "%{user}さんのページ"
       edit user: "プロフィールを編集する"
+    session:
+      login: "ログイン"
+      email: "メールアドレス"
+      password: "パスワード"
   link:
     user:
       edit: "プロフィールを編集"
+      not have an account: "登録がまだの方はこちら"
