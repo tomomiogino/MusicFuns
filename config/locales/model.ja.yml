@@ -4,6 +4,7 @@ ja:
       user: ユーザー
       artist: アーティスト
       channel: チャンネル
+      fan: ファン
     attributes:
       user:
         id: ユーザーID
