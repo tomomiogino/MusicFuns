@@ -1,0 +1,14 @@
+<h3><%= @channel.artist.name %></h3>
+<h4><%= "# #{@channel.name}" %></h4>
+<% if @channel.artist.image.url.present? %>
+  <%= image_tag(@channel.artist.image.url) %>
+<% else %>
+  <%= image_tag("default.png") %>
+<% end %>
+
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <p><%= t('view.comment.index') %></p>
+</div>
+<%= link_to t('link.artist.to page'), artist_path(@channel.artist.id) %>

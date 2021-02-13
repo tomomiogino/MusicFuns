@@ -210,6 +210,10 @@ ja:
       session:
         create: "ログインしました！"
         destroy: "ログアウトしました"
+      artist:
+        create: "アーティストページ『%{artist}』を作成しました！"
+      channel:
+        create: "チャンネル『# %{channel}』を作成しました！"
     alert:
       user:
         create: "登録に失敗しました"
@@ -217,6 +221,10 @@ ja:
       session:
         create: "ログインに失敗しました"
         login is needed: "ログインが必要です"
+      artist:
+        create: "アーティストページの作成に失敗しました"
+      channel:
+        create: "チャンネルの作成に失敗しました"
   view:
     user:
       new user: "新規登録"
@@ -233,6 +241,10 @@ ja:
       search results: "検索結果"
       no pages yet: "アーティストページがまだありません"
       create page: "%{artist}のアーティストページを作成"
+    channel:
+      new: "新規チャンネル作成"
+    comment:
+      index: "コメント一覧"
   link:
     user:
       new: "新規登録"

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :users, except: [:destroy]
   resources :sessions, only: [:new, :create, :destroy]
-  resources :artists, only: [:index, :new, :create, :show]
+  resources :artists, only: [:index, :new, :create, :show] do
+    resources :channels
+  end
 end
