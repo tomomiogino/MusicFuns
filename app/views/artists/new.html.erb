@@ -1,2 +1,15 @@
-<h1>Artists#new</h1>
-<p>Find me in app/views/artists/new.html.erb</p>
+<h1>アーティストページ作成</h1>
+<h3><%= @artist.name %></h3>
+<% if @image.present? %>
+  <%= image_tag(@image) %>
+<% else %>
+  <%= image_tag("default.png") %>
+<% end %>
+
+<%= form_with(model: @artist, local: true) do |f| %>
+  <%= f.hidden_field :name, value: @artist.name %>
+  <%= hidden_field_tag :image, @image %>
+  <div class="text-center my-4">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

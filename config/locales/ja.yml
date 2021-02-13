@@ -230,6 +230,8 @@ ja:
       index: "アーティストページ一覧"
       search: "検索"
       search by artist: "アーティスト名で検索"
+      search results: "検索結果"
+      no pages yet: "アーティストページがまだありません"
   link:
     user:
       new: "新規登録"
@@ -237,3 +239,6 @@ ja:
       not have an account: "登録がまだの方はこちら"
     session:
       log out: "ログアウト"
+    artist:
+      to page: "アーティストページへ"
+      create page: "アーティストページ作成"
