@@ -5,6 +5,12 @@
   <%= image_tag("default.png") %>
 <% end %>
 <div>
+  <% @channels.each do |channel| %>
+      <%= link_to "# #{channel.name}", artist_channel_path(@artist, channel), class: "btn btn-outline-info" %>
+    <% end %>
+</div>
+
+<div>
   <%= link_to t('view.channel.new'), new_artist_channel_path(artist_id: @artist.id), class: "btn btn-outline-warning" %>
 </div>
 <div>

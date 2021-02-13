@@ -30,6 +30,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    @channels = @artist.channels
   end
 
   private
