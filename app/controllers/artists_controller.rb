@@ -2,9 +2,9 @@ class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show]
 
   require 'rspotify'
-  RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_SECRET_ID'])
 
   def index
+    RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_SECRET_ID'])
     @artists = Artist.all
     if params[:search].present?
       @searchartists = RSpotify::Artist.search(params[:search], market: 'JP')
@@ -31,6 +31,8 @@ class ArtistsController < ApplicationController
 
   def show
     @channels = @artist.channels
+    @fan = current_user.fans.find_by(artist_id: @artist.id)
+    @fans = Fan.where(artist_id: @artist.id)
   end
 
   private

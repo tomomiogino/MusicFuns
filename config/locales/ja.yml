@@ -214,6 +214,8 @@ ja:
         create: "アーティストページ『%{artist}』を作成しました！"
       channel:
         create: "チャンネル『# %{channel}』を作成しました！"
+      fan:
+        create: "『%{artist}』をファン登録しました！"
     alert:
       user:
         create: "登録に失敗しました"
@@ -225,11 +227,14 @@ ja:
         create: "アーティストページの作成に失敗しました"
       channel:
         create: "チャンネルの作成に失敗しました"
+      fan:
+        create: "『%{artist}』のファン登録を解除しました"
   view:
     user:
       new user: "新規登録"
       show user: "%{user}さんのページ"
       edit user: "プロフィールを編集する"
+      fan artist: "ファン登録中アーティスト"
     session:
       login: "ログイン"
       email: "メールアドレス"
@@ -245,6 +250,8 @@ ja:
       new: "新規チャンネル作成"
     comment:
       index: "コメント一覧"
+    fan:
+      user index: "ファン登録中ユーザー"
   link:
     user:
       new: "新規登録"
@@ -255,3 +262,6 @@ ja:
     artist:
       to page: "アーティストページへ"
       create page: "アーティストページ作成"
+    fan:
+      create: "ファン登録"
+      destroy: "ファン登録解除"

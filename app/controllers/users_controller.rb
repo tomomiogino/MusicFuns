@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @fans = Fan.where(user_id: @user.id)
   end
 
   def edit; end
