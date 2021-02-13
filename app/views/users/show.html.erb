@@ -26,3 +26,27 @@
 </table>
 
 <%= link_to t('link.user.edit'), edit_user_path(@user) %>
+<br>
+<h4><%= t('view.user.fan artist') %></h4>
+<br>
+<% @fans.each do |fan| %>
+  <% artist = Artist.find_by(id: fan.artist_id) %>
+  <div class="index_item">
+    <div class="artist">
+      <p><%= artist.name %></p>
+    </div>
+    <div class="artist_image">
+      <% if artist.image.url.present? %>
+        <%= image_tag(artist.image.url) %>
+      <% else %>
+        <%= image_tag("default.png") %>
+      <% end %>
+    </div>
+    <!-- <% if @user.id == current_user.id %>
+      <%= link_to t('link.fan.destroy'), fan_path(id: fan.id), method: :delete, class: "btn btn-outline-danger" %>
+    <% end %> -->
+    <div class="link　btn-group">
+      <%= link_to t('link.artist.to page'), artist_path(artist), class: "btn btn-outline-primary" %>
+    </div>
+  </div>
+<% end %>

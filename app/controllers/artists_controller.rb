@@ -2,9 +2,9 @@ class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show]
 
   require 'rspotify'
-  RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_SECRET_ID'])
 
   def index
+    RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_SECRET_ID'])
     @artists = Artist.all
     if params[:search].present?
       @searchartists = RSpotify::Artist.search(params[:search], market: 'JP')

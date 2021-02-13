@@ -234,6 +234,7 @@ ja:
       new user: "新規登録"
       show user: "%{user}さんのページ"
       edit user: "プロフィールを編集する"
+      fan artist: "ファン登録中アーティスト"
     session:
       login: "ログイン"
       email: "メールアドレス"
