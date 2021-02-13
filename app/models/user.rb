@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :fans, dependent: :destroy
+  
   with_options presence: true do
     validates :name, length: { maximum: 20 }
     validates :email, length: { maximum: 255 }, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }, uniqueness: true
