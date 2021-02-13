@@ -1,2 +1,10 @@
-<h1>Artists#show</h1>
-<p>Find me in app/views/artists/show.html.erb</p>
+<h3><%= @artist.name %></h3>
+<% if @artist.image.url.present? %>
+  <%= image_tag(@artist.image.url) %>
+<% else %>
+  <%= image_tag("default.png") %>
+<% end %>
+<div>
+  <%= link_to t('view.artist.index'), artists_path, class: "btn btn-outline-warning" %>
+</div>
+
