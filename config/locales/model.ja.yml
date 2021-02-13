@@ -3,6 +3,7 @@ ja:
     models:
       user: ユーザー
       artist: アーティスト
+      channel: チャンネル
     attributes:
       user:
         id: ユーザーID
@@ -16,3 +17,6 @@ ja:
         id: アーティストID
         name: アーティスト名
         image: アーティスト画像
+      channel:
+        id: チャンネルID
+        name: チャンネル名
