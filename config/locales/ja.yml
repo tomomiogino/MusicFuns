@@ -239,6 +239,8 @@ ja:
       show user: "%{user}さんのページ"
       edit user: "プロフィールを編集する"
       fan artist: "ファン登録中アーティスト"
+      follow index: "フォロー一覧"
+      follower index: "フォロワー一覧"
     session:
       login: "ログイン"
       email: "メールアドレス"
