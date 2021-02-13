@@ -232,6 +232,7 @@ ja:
       search by artist: "アーティスト名で検索"
       search results: "検索結果"
       no pages yet: "アーティストページがまだありません"
+      create page: "%{artist}のアーティストページを作成"
   link:
     user:
       new: "新規登録"

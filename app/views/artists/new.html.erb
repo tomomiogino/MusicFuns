@@ -1,5 +1,4 @@
-<h1>アーティストページ作成</h1>
-<h3><%= @artist.name %></h3>
+<h3><%= t('view.artist.create page', artist: @artist.name) %></h3>
 <% if @image.present? %>
   <%= image_tag(@image) %>
 <% else %>
@@ -10,7 +9,7 @@
   <%= f.hidden_field :name, value: @artist.name %>
   <%= hidden_field_tag :image, @image %>
   <div class="text-center my-4">
-    <%= f.submit class: "btn btn-primary" %>
+    <%= f.submit t('link.artist.create page'), class: "btn btn-primary" %>
   </div>
 <% end %>
 
