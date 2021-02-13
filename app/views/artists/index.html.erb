@@ -1,0 +1,58 @@
+<h3><%= t('view.artist.index') %></h3>
+  <%= form_with url: artists_path, method: :get, local: true do |form| %>
+    <div class="input-group">
+      <%= form.text_field :search, placeholder: t('view.artist.search by artist'), class: "form-control" %>
+      <span class="input-group-btn">
+        <%= form.submit t('view.artist.search'), name: nil, class: "btn btn-primary" %>
+      </span>
+    </div>
+  <% end %>
+
+<div>
+  <% if @searchartists.present? %>
+  <h3><%= t('view.artist.search results') %></h3>
+    <% @searchartists.each do |searchartist| %>
+      <div>
+        <% if artist = @artists.find_by(name: searchartist.name) %>
+          <% if artist.image?%>
+            <%= image_tag(artist.image.url) %>
+          <%else%>
+            <%= image_tag("default.png")%>
+          <%end%>
+          <%= artist.name %>
+          <%= link_to t('link.artist.to page'), artist_path(artist), class: "btn btn-primary" %>
+        <% end %>
+      <% end %>
+    </div>
+    <br><br>
+    <h2><%= t('view.artist.no pages yet') %></h2>
+    <% @searchartists.each do |searchartist| %>
+      <% unless @artists.find_by(name: searchartist.name) %>
+        <div>
+          <% if searchartist.images.any?%>
+            <% image = searchartist.images[1]["url"] %>
+            <%= image_tag(image) %>
+            <%= searchartist.name %>
+            <%= link_to t('link.artist.create page'), new_artist_path(name: searchartist.name, image: image), class: "btn btn-outline-primary" %>
+          <% else %>
+            <%= image_tag("default.png") %>
+            <%= searchartist.name %>
+            <%= link_to t('link.artist.create page'), new_artist_path(name: searchartist.name), class: "btn btn-outline-primary" %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  <% else %>
+    <% @artists.each do |artist| %>
+    <div>
+      <% if artist.image? %>
+        <%= image_tag(artist.image.url) %>
+      <% else %>
+        <%= image_tag("default.png") %>
+      <% end %>
+      <%= artist.name %>
+      <%= link_to t('link.artist.to page'), artist_path(artist), class: "btn btn-outline-primary" %>
+    </div>
+    <%end%>
+  <% end %>
+</div>
