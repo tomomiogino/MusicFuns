@@ -24,9 +24,51 @@
     </tr>
   </tbody>
 </table>
-
-<%= link_to t('link.user.edit'), edit_user_path(@user) %>
+<% if current_user == @user %>
+  <%= link_to t('link.user.edit'), edit_user_path(@user) %>
+<% else %>
+  <%= render 'follow_form', user: @user %>
+<% end %>
 <br>
+
+<div class="row">
+  <div class="col-6">
+    <h4><%= t('view.user.follow index') %></h4>
+    <div class="row justify-content-center">
+      <% @user.following.each do |follow_user| %>
+        <!-- <div class="col-3"> -->
+          <div class="profile_image_s">
+            <% if follow_user.image && follow_user.image.url %>
+              <%= image_tag(follow_user.image.url) %>
+            <% else %>
+              <%= image_tag("default.png") %>
+            <% end %>
+          </div>
+          <%= "#{follow_user.name}さん" %>
+        <!-- </div> -->
+      <% end %>
+    </div>
+
+  </div>
+  <div class="col-6">
+    <h4><%= t('view.user.follower index') %></h4>
+    <div class="row justify-content-center">
+      <% @user.followers.each do |follower_user| %>
+        <!-- <div class="col-3"> -->
+          <div class="profile_image_s">
+            <% if follower_user.image && follower_user.image.url %>
+              <%= image_tag(follower_user.image.url) %>
+            <% else %>
+              <%= image_tag("default.png") %>
+            <% end %>
+          </div>
+          <%= "#{follower_user.name}さん" %>
+        <!-- </div> -->
+      <% end %>
+    </div>
+  </div>
+</div>
+
 <h4><%= t('view.user.fan artist') %></h4>
 <br>
 <% @fans.each do |fan| %>
