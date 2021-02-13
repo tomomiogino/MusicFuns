@@ -5,6 +5,14 @@
   <%= image_tag("default.png") %>
 <% end %>
 <div>
+  <% if @fan.present? %>
+    <%= link_to 'ファン登録を解除', fan_path(id: @fan.id), method: :delete, class: 'btn btn-outline-danger' %>
+  <% else %>
+    <%= link_to 'ファン登録', fans_path(artist_id: @artist.id), method: :post, class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+<div>
   <% @channels.each do |channel| %>
       <%= link_to "# #{channel.name}", artist_channel_path(@artist, channel), class: "btn btn-outline-info" %>
     <% end %>
