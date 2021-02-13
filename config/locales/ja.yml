@@ -239,6 +239,8 @@ ja:
       create page: "%{artist}のアーティストページを作成"
     channel:
       new: "新規チャンネル作成"
+    comment:
+      index: "コメント一覧"
   link:
     user:
       new: "新規登録"
