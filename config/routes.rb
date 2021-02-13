@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'artists#index'
   resources :users, except: [:destroy]
   resources :sessions, only: [:new, :create, :destroy]
   resources :fans, only: [:create, :destroy]

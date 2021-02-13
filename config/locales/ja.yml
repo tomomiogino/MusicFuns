@@ -216,6 +216,8 @@ ja:
         create: "チャンネル『# %{channel}』を作成しました！"
       fan:
         create: "『%{artist}』をファン登録しました！"
+      relationship:
+        create: "『%{user}』さんをフォローしました！"
     alert:
       user:
         create: "登録に失敗しました"
@@ -229,6 +231,8 @@ ja:
         create: "チャンネルの作成に失敗しました"
       fan:
         create: "『%{artist}』のファン登録を解除しました"
+      relationship:
+        destroy: "『%{user}』さんのフォローを解除しました"
   view:
     user:
       new user: "新規登録"
@@ -257,6 +261,8 @@ ja:
       new: "新規登録"
       edit: "プロフィールを編集"
       not have an account: "登録がまだの方はこちら"
+      follow: "フォロー"
+      unfollow: "フォロー解除"
     session:
       log out: "ログアウト"
     artist:
