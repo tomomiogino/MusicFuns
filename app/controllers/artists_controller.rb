@@ -22,9 +22,9 @@ class ArtistsController < ApplicationController
       @artist.remote_image_url = params[:image]
     end
     if @artist.save
-      redirect_to artist_path(@artist.id), flash: {success: "#{@artist.name}のアーティストページを作成しました！"}
+      redirect_to artist_path(@artist.id), flash: {success: t('flash.success.artist.create', artist: @artist.name)}
     else
-      flash.now[:danger] = "アーティストページの作成に失敗しました"
+      flash.now[:danger] = t('flash.alert.artist.create')
       render :new
     end
   end

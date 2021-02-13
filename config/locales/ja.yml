@@ -210,6 +210,8 @@ ja:
       session:
         create: "ログインしました！"
         destroy: "ログアウトしました"
+      artist:
+        create: "アーティストページ『%{artist}』を作成しました！"
       channel:
         create: "チャンネル『# %{channel}』を作成しました！"
     alert:
@@ -219,6 +221,8 @@ ja:
       session:
         create: "ログインに失敗しました"
         login is needed: "ログインが必要です"
+      artist:
+        create: "アーティストページの作成に失敗しました"
       channel:
         create: "チャンネルの作成に失敗しました"
   view:
