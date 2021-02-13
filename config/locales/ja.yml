@@ -249,6 +249,8 @@ ja:
       new: "新規チャンネル作成"
     comment:
       index: "コメント一覧"
+    fan:
+      user index: "ファン登録中ユーザー"
   link:
     user:
       new: "新規登録"
@@ -259,3 +261,6 @@ ja:
     artist:
       to page: "アーティストページへ"
       create page: "アーティストページ作成"
+    fan:
+      create: "ファン登録"
+      destroy: "ファン登録解除"

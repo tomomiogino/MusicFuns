@@ -32,6 +32,7 @@ class ArtistsController < ApplicationController
   def show
     @channels = @artist.channels
     @fan = current_user.fans.find_by(artist_id: @artist.id)
+    @fans = Fan.where(artist_id: @artist.id)
   end
 
   private

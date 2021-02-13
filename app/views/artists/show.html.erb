@@ -6,9 +6,9 @@
 <% end %>
 <div>
   <% if @fan.present? %>
-    <%= link_to 'ファン登録を解除', fan_path(id: @fan.id), method: :delete, class: 'btn btn-outline-danger' %>
+    <%= link_to t('link.fan.destroy'), fan_path(id: @fan.id), method: :delete, class: 'btn btn-outline-danger' %>
   <% else %>
-    <%= link_to 'ファン登録', fans_path(artist_id: @artist.id), method: :post, class: 'btn btn-primary' %>
+    <%= link_to t('link.fan.create'), fans_path(artist_id: @artist.id), method: :post, class: 'btn btn-primary' %>
   <% end %>
 </div>
 
@@ -24,4 +24,21 @@
 <div>
   <%= link_to t('view.artist.index'), artists_path, class: "btn btn-outline-primary" %>
 </div>
+
+<h4><%= t('view.fan.user index') %></h4>
+<% @fans.each do |fan| %>
+  <% user = User.find_by(id: fan.user_id) %>
+    <div class="index_item">
+      <div class="user_image">
+        <% if user.image && user.image.url %>
+          <%= image_tag(user.image.url) %>
+        <% else %>
+          <%= image_tag("default.png") %>
+        <% end %>
+      </div>
+      <div>
+        <%= link_to "#{user.name}", user_path(user) %>
+      </div>
+    </div>
+<% end %>
 
