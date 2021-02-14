@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :fans, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :artists, only: [:index, :new, :create, :show] do
-    resources :channels
+    resources :channels, only: [:new, :create, :show] do
+      resources :comments
+    end
   end
 end
