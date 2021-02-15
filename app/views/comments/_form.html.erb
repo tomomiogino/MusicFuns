@@ -1,9 +1,9 @@
 <%= form_with(model: [channel, comment]) do |form| %>
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.label :content, class: "control-label" %>
+    <%= form.text_area :content, class: "form-control" %>
   </div>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit t('submit.comment'), class: "btn btn-primary" %>
   </div>
 <% end %>
