@@ -5,6 +5,7 @@ ja:
       artist: アーティスト
       channel: チャンネル
       fan: ファン
+      comment: コメント
     attributes:
       user:
         id: ユーザーID
@@ -21,3 +22,5 @@ ja:
       channel:
         id: チャンネルID
         name: チャンネル名
+      comment:
+        content: コメント

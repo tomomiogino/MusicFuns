@@ -7,8 +7,15 @@
 <% end %>
 
 <div class="container">
-  <p id="notice"><%= notice %></p>
-
   <p><%= t('view.comment.index') %></p>
+  <p id="notice"><%= notice %></p>
+  <!-- <div id="error_explanation"></div> -->
+  </div>
+  <div id="comments_area">
+    <%= render partial: 'comments/index', locals: { comments: @comments, channel: @channel } %>
+  </div>
+  <div id="error_explanation"></div>
+  <%= render partial: 'comments/form', locals: { comment: @comment, channel: @channel } %>
 </div>
+
 <%= link_to t('link.artist.to page'), artist_path(@channel.artist.id) %>
