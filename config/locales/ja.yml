@@ -218,6 +218,11 @@ ja:
         create: "『%{artist}』をファン登録しました！"
       relationship:
         create: "『%{user}』さんをフォローしました！"
+      comment:
+        create: "コメントを投稿しました！"
+        edit: "コメントの編集中・・・"
+        update: "コメントが編集されました！"
+        destroy: "コメントが削除されました"
     alert:
       user:
         create: "登録に失敗しました"
@@ -233,6 +238,9 @@ ja:
         create: "『%{artist}』のファン登録を解除しました"
       relationship:
         destroy: "『%{user}』さんのフォローを解除しました"
+      comment:
+        create: "投稿に失敗しました・・・"
+        update: "コメントの編集に失敗しました"
   view:
     user:
       new user: "新規登録"
