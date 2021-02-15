@@ -1,0 +1,10 @@
+<%= form_with(model: [comment]) do |form| %>
+  <div id="error_explanation"></div>
+  <div class="field">
+    <%= form.text_area :content, id: "comment_content_#{comment.id}" %>
+    <%= form.label :content %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

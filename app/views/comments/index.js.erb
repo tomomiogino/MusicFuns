@@ -1,0 +1,4 @@
+$("#comments_area").html("<%= j(render 'comments/index', { comments: @comment.channel.comments, channel: @comment.channel }) %>");
+$("textarea").val('');
+$("#notice").html("<%= j flash[:notice] %>");
+$("#error_explanation").html("<%= j(render 'error', { comment: @comment }) %>");

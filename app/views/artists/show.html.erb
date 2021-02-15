@@ -14,7 +14,7 @@
 
 <div>
   <% @channels.each do |channel| %>
-      <%= link_to "# #{channel.name}", artist_channel_path(@artist, channel), class: "btn btn-outline-info" %>
+      <%= link_to "# #{channel.name}", channel_path(channel), class: "btn btn-outline-info" %>
     <% end %>
 </div>
 

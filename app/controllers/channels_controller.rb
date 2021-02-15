@@ -18,6 +18,8 @@ class ChannelsController < ApplicationController
   end
 
   def show
+    @comments = @channel.comments
+    @comment = @channel.comments.build
   end
 
   private
