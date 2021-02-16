@@ -232,6 +232,7 @@ ja:
       session:
         create: "ログインに失敗しました"
         login is needed: "ログインが必要です"
+        logged in: "ログイン済みです"
       artist:
         create: "アーティストページの作成に失敗しました"
       channel:
@@ -275,6 +276,7 @@ ja:
       not have an account: "登録がまだの方はこちら"
       follow: "フォロー"
       unfollow: "フォロー解除"
+      my page: "マイページ"
     session:
       login: "ログイン"
       log out: "ログアウト"

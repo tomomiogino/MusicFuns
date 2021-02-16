@@ -29,11 +29,12 @@
                 <%= current_user.name %>
               </a>
               <div class="dropdown-menu" aria-labelledby="#navbarDropdownMenu" >
-                <%= link_to "マイページ", user_path(current_user.id), class: "dropdown-item" %>
+                <%= link_to t('link.user.my page'), user_path(current_user.id), class: "dropdown-item" %>
                 <%= link_to t('link.session.log out'), session_path(current_user.id), method: :delete, class: "dropdown-item" %>
               </div>
             </li>
           <% else %>
+            <li class="nav-item"><%= link_to t('link.artist.index'), artists_path, class:"nav-link pt-1" %></li>
             <li class="nav-item"><%= link_to t('link.session.login'), new_session_path, class:"nav-link pt-1" %></li>
             <li class="nav-item"><%= link_to t('link.user.new'), new_user_path, class:"nav-link pt-1" %></li>
           <% end %>

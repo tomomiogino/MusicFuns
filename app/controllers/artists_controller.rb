@@ -1,5 +1,6 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show]
+  before_action :authenticate_user, except: [:index]
 
   require 'rspotify'
 

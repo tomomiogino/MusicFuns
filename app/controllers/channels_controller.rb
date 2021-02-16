@@ -1,5 +1,6 @@
 class ChannelsController < ApplicationController
   before_action :set_channel, only: [:show]
+  before_action :authenticate_user
 
   def new
     @channel = Channel.new

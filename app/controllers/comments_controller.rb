@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_channel, only: [:create]
+  before_action :authenticate_user
 
   def create
     @comment = @channel.comments.build(comment_params)

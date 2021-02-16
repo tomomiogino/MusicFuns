@@ -1,4 +1,6 @@
 class FansController < ApplicationController
+  before_action :authenticate_user
+
   def create
     fan = current_user.fans.create(artist_id: params[:artist_id])
     redirect_to artist_path(fan.artist), flash: {success: t('flash.success.fan.create', artist: fan.artist.name)}
