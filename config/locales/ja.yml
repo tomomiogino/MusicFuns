@@ -276,6 +276,7 @@ ja:
       follow: "フォロー"
       unfollow: "フォロー解除"
     session:
+      login: "ログイン"
       log out: "ログアウト"
     artist:
       to page: "アーティストページへ"

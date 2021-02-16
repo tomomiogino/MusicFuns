@@ -1,0 +1,62 @@
+html {
+  position: relative;
+  min-height: 100%;
+  font-size: 90%;
+  width: 100%;
+}
+body {
+  padding-top: 50px;
+  padding-bottom: 60px;
+  min-height: 100%;
+  text-align: center;
+  // font-family: 'Meiryo';
+}
+ul {
+  list-style: none;
+}
+.header_icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 300px;
+}
+.nav-link {
+  display: block;
+  padding: 0;
+  height:100%;
+}
+.navbar-nav .nav-link:hover{
+color: #00ff00;
+}
+.navbar-brand {
+  font-size: 1.2rem;
+  font-family: impact;
+  color: #00ff00;
+}
+.navbar-brand:hover {
+  color: #fff;
+}
+.navbar {
+  background-color: rgba( 000, 000, 000, 0.8 );
+}
+.nav-link {
+  color: #fff;
+}
+.navbar-toggler {
+  border-color: #fff;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+  background-color: rgba( 000, 000, 000, 0.8 );
+}
+.footer_content {
+  text-align: center;
+  color: #fff;
+  height: 40px;
+  line-height: 40px;
+}
