@@ -18,7 +18,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto justify-content-center">
           <% if logged_in? %>
-            <li class="nav-item"><%= link_to "アーティスト一覧", artists_path, class:"nav-link pt-1" %></li>
+            <li class="nav-item"><%= link_to t('link.artist.index'), artists_path, class:"nav-link pt-1" %></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <% if @current_user.image && @current_user.image.url %>

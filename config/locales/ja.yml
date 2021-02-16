@@ -281,6 +281,7 @@ ja:
     artist:
       to page: "アーティストページへ"
       create page: "アーティストページ作成"
+      index: "アーティスト一覧"
     fan:
       create: "ファン登録"
       destroy: "ファン登録解除"
