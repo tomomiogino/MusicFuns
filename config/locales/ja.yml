@@ -247,7 +247,7 @@ ja:
   view:
     user:
       new user: "新規登録"
-      show user: "%{user}さんのページ"
+      show user: "%{user}さん"
       edit user: "プロフィールを編集する"
       fan artist: "ファン登録中アーティスト"
       follow index: "フォロー一覧"

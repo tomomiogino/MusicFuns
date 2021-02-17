@@ -1,0 +1,44 @@
+.user_image {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 300px;
+  margin: auto;
+}
+// .user_image img{
+//   max-width: 210px;
+//   max-height: 210px;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
+.user_image_s {
+  width: 70px;
+  height: 70px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 300px;
+  margin: auto;
+}
+.user_image_s img {
+  max-width: 70px;
+  max-height: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.follow_item {
+  padding-right: 5%;
+}
+.follower_item {
+  padding-left: 5%;
+}
+
+.follow_item p {
+  padding-left: 20%;
+}
+.follower_item p {
+  padding-left: 20%;
+}
