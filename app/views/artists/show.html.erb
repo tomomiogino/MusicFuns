@@ -1,44 +1,50 @@
-<h3><%= @artist.name %></h3>
-<% if @artist.image.url.present? %>
-  <%= image_tag(@artist.image.url) %>
-<% else %>
-  <%= image_tag("default.png") %>
-<% end %>
-<div>
-  <% if @fan.present? %>
-    <%= link_to t('link.fan.destroy'), fan_path(id: @fan.id), method: :delete, class: 'btn btn-outline-danger' %>
-  <% else %>
-    <%= link_to t('link.fan.create'), fans_path(artist_id: @artist.id), method: :post, class: 'btn btn-primary' %>
-  <% end %>
-</div>
-
-<div>
-  <% @channels.each do |channel| %>
-      <%= link_to "# #{channel.name}", channel_path(channel), class: "btn btn-outline-info" %>
+<div class="page_item">
+  <h3><%= @artist.name %></h3><br>
+  <div>
+    <% if @artist.image.url.present? %>
+      <%= image_tag(@artist.image.url) %>
+    <% else %>
+      <%= image_tag("default.png") %>
     <% end %>
-</div>
-
-<div>
-  <%= link_to t('view.channel.new'), new_artist_channel_path(artist_id: @artist.id), class: "btn btn-outline-warning" %>
-</div>
-<div>
-  <%= link_to t('view.artist.index'), artists_path, class: "btn btn-outline-primary" %>
-</div>
-
-<h4><%= t('view.fan.user index') %></h4>
-<% @fans.each do |fan| %>
-  <% user = User.find_by(id: fan.user_id) %>
-    <div class="index_item">
-      <div class="user_image">
-        <% if user.image && user.image.url %>
-          <%= image_tag(user.image.url) %>
-        <% else %>
-          <%= image_tag("default.png") %>
+  </div><br>
+  <div>
+    <% if @fan.present? %>
+      <%= link_to t('view.channel.new'), new_artist_channel_path(artist_id: @artist.id), class: "btn btn-warning" %>
+      <%= link_to t('link.fan.destroy'), fan_path(id: @fan.id), method: :delete, class: 'btn btn-outline-danger' %>
+    <% else %>
+      <%= link_to t('link.fan.create'), fans_path(artist_id: @artist.id), method: :post, class: 'btn btn-primary' %>
+    <% end %>
+  </div><br>
+  <div>
+    <% if @channels.present? %>
+      <h5><%= t('view.channel.index') %></h5>
+      <% @channels.each do |channel| %>
+        <span><%= link_to "# #{channel.name}", channel_path(channel), class: "btn btn-outline-info" %></span>
+      <% end %>
+    <% else %>
+      <h5><%= t('view.channel.no channels yet') %></h5>
+      <h6><%= t('view.channel.create a channel') %></h6>
+    <% end %>
+  </div><br><br>
+  <h4><%= t('view.fan.user index') %></h4>
+  <div class="row justify-content-center fan_users">
+    <% @fans.each do |fan| %>
+      <% user = User.find_by(id: fan.user_id) %>
+      <div class="col-auto">
+        <%= link_to user_path(user) do %>
+          <div class="user_image_s">
+            <% if user.image && user.image.url %>
+              <%= image_tag(user.image.url) %>
+            <% else %>
+              <%= image_tag("default.png") %>
+            <% end %>
+          </div>
+          <p><%= user.name %></p>
         <% end %>
       </div>
-      <div>
-        <%= link_to "#{user.name}", user_path(user) %>
-      </div>
-    </div>
-<% end %>
-
+    <% end %>
+  </div><br><br>
+  <div>
+    <%= link_to t('view.artist.index'), artists_path, class: "btn btn-primary" %>
+  </div>
+</div>

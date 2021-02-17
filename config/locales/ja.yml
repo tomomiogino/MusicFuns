@@ -265,6 +265,9 @@ ja:
       create page: "%{artist}のアーティストページを作成"
     channel:
       new: "新規チャンネル作成"
+      index: "チャンネル一覧"
+      no channels yet: "チャンネルがまだありません"
+      create a channel: "チャンネルを作ってファン同士好きな話題で盛り上がりましょう！"
     comment:
       index: "コメント一覧"
     fan:
