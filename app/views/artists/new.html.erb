@@ -1,18 +1,22 @@
-<h3><%= t('view.artist.create page', artist: @artist.name) %></h3>
-<% if @image.present? %>
-  <%= image_tag(@image) %>
-<% else %>
-  <%= image_tag("default.png") %>
-<% end %>
+<div class="page_item">
+  <h4><%= t('view.artist.create page') %></h4><br>
+  <%= Artist.human_attribute_name(:name) %>
+  <h2><%= @artist.name %></h2>
+  <% if @image.present? %>
+    <%= image_tag(@image) %>
+  <% else %>
+    <%= image_tag("default.png") %>
+  <% end %>
 
-<%= form_with(model: @artist, local: true) do |f| %>
-  <%= f.hidden_field :name, value: @artist.name %>
-  <%= hidden_field_tag :image, @image %>
-  <div class="text-center my-4">
-    <%= f.submit t('link.artist.create page'), class: "btn btn-primary" %>
+  <%= form_with(model: @artist, local: true) do |f| %>
+    <%= f.hidden_field :name, value: @artist.name %>
+    <%= hidden_field_tag :image, @image %>
+    <div class="text-center my-4">
+      <%= f.submit t('link.artist.create page'), class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= link_to t('view.artist.index'), artists_path, class: "btn btn-outline-warning" %>
   </div>
-<% end %>
-
-<div>
-  <%= link_to t('view.artist.index'), artists_path, class: "btn btn-outline-warning" %>
 </div>

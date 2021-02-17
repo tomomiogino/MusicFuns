@@ -262,7 +262,7 @@ ja:
       search by artist: "アーティスト名で検索"
       search results: "検索結果"
       no pages yet: "アーティストページがまだない場合は作成しましょう！"
-      create page: "%{artist}のアーティストページを作成"
+      create page: "アーティストページ作成"
     channel:
       new: "新規チャンネル作成"
       index: "チャンネル一覧"
