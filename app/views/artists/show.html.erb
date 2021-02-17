@@ -31,7 +31,7 @@
     <% @fans.each do |fan| %>
       <% user = User.find_by(id: fan.user_id) %>
       <div class="col-auto">
-        <%= link_to user_path(user) do %>
+        <%= link_to user_path(user), class: "text-dark" do %>
           <div class="user_image_s">
             <% if user.image && user.image.url %>
               <%= image_tag(user.image.url) %>

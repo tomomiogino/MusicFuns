@@ -25,14 +25,16 @@
       <div class="row justify-content-center">
         <% @user.following.each do |follow_user| %>
           <div class="col-auto">
-            <div class="user_image_s">
-              <% if follow_user.image && follow_user.image.url %>
-                <%= image_tag(follow_user.image.url) %>
-              <% else %>
-                <%= image_tag("default.png") %>
-              <% end %>
-            </div>
-            <%= "#{follow_user.name}" %>
+            <%= link_to user_path(follow_user), class: "text-dark" do %>
+              <div class="user_image_s">
+                <% if follow_user.image && follow_user.image.url %>
+                  <%= image_tag(follow_user.image.url) %>
+                <% else %>
+                  <%= image_tag("default.png") %>
+                <% end %>
+              </div>
+              <%= follow_user.name %>
+            <% end %>
           </div>
         <% end %>
       </div>
@@ -43,14 +45,16 @@
       <div class="row justify-content-center">
         <% @user.followers.each do |follower_user| %>
           <div class="col-auto">
-            <div class="user_image_s">
-              <% if follower_user.image && follower_user.image.url %>
-                <%= image_tag(follower_user.image.url) %>
-              <% else %>
-                <%= image_tag("default.png") %>
-              <% end %>
-            </div>
-            <%= "#{follower_user.name}" %>
+            <%= link_to user_path(follower_user), class: "text-dark" do %>
+              <div class="user_image_s">
+                <% if follower_user.image && follower_user.image.url %>
+                  <%= image_tag(follower_user.image.url) %>
+                <% else %>
+                  <%= image_tag("default.png") %>
+                <% end %>
+              </div>
+              <%= follower_user.name %>
+            <% end %>
           </div>
         <% end %>
       </div>
