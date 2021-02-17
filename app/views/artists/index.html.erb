@@ -1,58 +1,94 @@
-<h3><%= t('view.artist.index') %></h3>
-  <%= form_with url: artists_path, method: :get, local: true do |form| %>
-    <div class="input-group">
-      <%= form.text_field :search, placeholder: t('view.artist.search by artist'), class: "form-control" %>
-      <span class="input-group-btn">
-        <%= form.submit t('view.artist.search'), name: nil, class: "btn btn-primary" %>
-      </span>
-    </div>
-  <% end %>
-
-<div>
-  <% if @searchartists.present? %>
-  <h3><%= t('view.artist.search results') %></h3>
-    <% @searchartists.each do |searchartist| %>
-      <div>
+<div class="page_item">
+  <h3><%= t('view.artist.index') %></h3>
+  <br>
+    <%= form_with url: artists_path, method: :get, local: true do |form| %>
+      <div class="input-group d-flex justify-content-center">
+        <%= form.text_field :search, placeholder: t('view.artist.search by artist'), class: "form-control col-8" %>
+        <span class="input-group-btn">
+          <%= form.submit t('view.artist.search'), name: nil, class: "btn btn-primary" %>
+        </span>
+      </div>
+    <% end %>
+  <br><br>
+  <div>
+    <% if @searchartists.present? %>
+    <h3><%= t('view.artist.search results') %></h3>
+    <div class="row justify-content-center">
+      <% @searchartists.each do |searchartist| %>
         <% if artist = @artists.find_by(name: searchartist.name) %>
-          <% if artist.image?%>
-            <%= image_tag(artist.image.url) %>
-          <%else%>
-            <%= image_tag("default.png")%>
-          <%end%>
-          <%= artist.name %>
-          <%= link_to t('link.artist.to page'), artist_path(artist), class: "btn btn-primary" %>
+          <div class="card mb-3" style="max-width: 480px;">
+            <div class="row no-gutters">
+              <div class="col-sm-4">
+                <% if artist.image? %>
+                  <%= image_tag artist.image.url, class: "card-img" %>
+                <% else %>
+                  <%= image_tag "default.png", class: "card-img" %>
+                <% end %>
+              </div>
+              <div class="card-body col-sm-8">
+                <h5 class="card-title"><%= artist.name %></h5>
+                <div class="">
+                  <%= link_to t('link.artist.to page'), artist_path(artist), class: "btn btn-outline-primary" %>
+                </div>
+              </div>
+            </div>
+          </div>
         <% end %>
-      <% end %>
+      <%end%>
     </div>
+
     <br><br>
     <h2><%= t('view.artist.no pages yet') %></h2>
-    <% @searchartists.each do |searchartist| %>
-      <% unless @artists.find_by(name: searchartist.name) %>
-        <div>
-          <% if searchartist.images.any?%>
-            <% image = searchartist.images[1]["url"] %>
-            <%= image_tag(image) %>
-            <%= searchartist.name %>
-            <%= link_to t('link.artist.create page'), new_artist_path(name: searchartist.name, image: image), class: "btn btn-outline-primary" %>
-          <% else %>
-            <%= image_tag("default.png") %>
-            <%= searchartist.name %>
-            <%= link_to t('link.artist.create page'), new_artist_path(name: searchartist.name), class: "btn btn-outline-primary" %>
-          <% end %>
+    <div class="row justify-content-center">
+      <% @searchartists.each do |searchartist| %>
+        <% unless @artists.find_by(name: searchartist.name) %>
+          <div class="card mb-3" style="max-width: 480px;">
+            <div class="row no-gutters">
+              <div class="col-sm-4">
+                <% if searchartist.images.any?%>
+                  <% image = searchartist.images[1]["url"] %>
+                  <%= image_tag image, class: "card-img" %>
+                <% else %>
+                  <%= image_tag "default.png", class: "card-img" %>
+                <% end %>
+              </div>
+              <div class="card-body col-sm-8">
+                <h5 class="card-title"><%= searchartist.name %></h5>
+                <div class="">
+                  <% if searchartist.images.any?%>
+                    <%= link_to t('link.artist.create page'), new_artist_path(name: searchartist.name, image: image), class: "btn btn-outline-primary" %>
+                  <% else %>
+                    <%= link_to t('link.artist.create page'), new_artist_path(name: searchartist.name), class: "btn btn-outline-primary" %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      </div>
+    <% else %>
+    <div class="row justify-content-center">
+      <% @artists.each do |artist| %>
+      <div class="card col-auto ml-1 mt-1" style="max-width: 480px;">
+        <div class="row no-gutters">
+          <div class="col-sm-4">
+            <% if artist.image? %>
+              <%= image_tag artist.image.url, class: "card-img" %>
+            <% else %>
+              <%= image_tag "default.png", class: "card-img" %>
+            <% end %>
+          </div>
+          <div class="card-body col-sm-8">
+            <h5 class="card-title"><%= artist.name %></h5>
+            <div class="">
+              <%= link_to t('link.artist.to page'), artist_path(artist), class: "btn btn-outline-primary" %>
+            </div>
+          </div>
         </div>
-      <% end %>
-    <% end %>
-  <% else %>
-    <% @artists.each do |artist| %>
-    <div>
-      <% if artist.image? %>
-        <%= image_tag(artist.image.url) %>
-      <% else %>
-        <%= image_tag("default.png") %>
-      <% end %>
-      <%= artist.name %>
-      <%= link_to t('link.artist.to page'), artist_path(artist), class: "btn btn-outline-primary" %>
+      </div>
+      <%end%>
     </div>
-    <%end%>
-  <% end %>
+    <% end %>
+  </div>
 </div>
