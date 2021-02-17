@@ -293,5 +293,6 @@ ja:
       destroy: "ファン登録解除"
     edit: "編集"
     destroy: "削除"
+    clear: "クリア"
   submit:
     comment: "投稿"
