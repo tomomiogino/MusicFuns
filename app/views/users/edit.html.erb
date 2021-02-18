@@ -1,47 +1,54 @@
-<h2><%= t('view.user.edit user') %></h2>
-<br>
-<%= form_with(model: @user, local: true) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <div class="alert alert-danger">
-        <h2><%= t('errors.template.header', count: @user.errors.count) %></h2>
-        <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
+<div class="page_item">
+  <h2><%= t('view.user.edit user') %></h2>
+  <br>
+  <div class="user_image_s">
+    <% if @user.image && @user.image.url %>
+      <%= image_tag @user.image.url %>
+    <% else %>
+      <%= image_tag "default.png" %>
+    <% end %>
+  </div>
+  <%= form_with(model: @user, local: true) do |f| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <div class="alert alert-danger">
+          <h2><%= t('errors.template.header', count: @user.errors.count) %></h2>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
+    <% end %>
+    <div class="form-group row mr-5 ml-5">
+      <%= f.label :name, class: "control-label" %>
+      <%= f.text_field :name, class: 'form-control' %>
     </div>
-  <% end %>
-  <div class="form-group">
-    <%= f.label :name, class: "control-label" %>
-    <%= f.text_field :name, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :email, class: "control-label" %>
-    <%= f.text_field :email, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password, class: "control-label" %>
-    <%= f.password_field :password, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password_confirmation, class: "control-label" %>
-    <%= f.password_field :password_confirmation, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :profile_comment, class: "control-label" %>
-    <%= f.text_area :profile_comment, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :image, class: "control-label" %>
-    <div class="image_choice">
-      <%= f.file_field :image %>
+    <div class="form-group row mr-5 ml-5">
+      <%= f.label :email, class: "control-label" %>
+      <%= f.text_field :email, class: 'form-control' %>
+    </div>
+    <div class="form-group row mr-5 ml-5">
+      <%= f.label :password, class: "control-label" %>
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+    <div class="form-group row mr-5 ml-5">
+      <%= f.label :password_confirmation, class: "control-label" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+    <div class="form-group row mr-5 ml-5">
+      <%= f.label :profile_comment, class: "control-label" %>
+      <%= f.text_area :profile_comment, class: 'form-control' %>
+    </div>
+    <div class="form-group row justify-content-start pt-3 ml-5">
+      <%= f.label :image, class: "control-label" %>
+      <%= f.file_field :image, class: "ml-5 pl-5" %>
       <%= f.hidden_field :image_cache %>
     </div>
-  </div>
-  <br>
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
-<br><br>
-<%= link_to t('link.user.to my page'), user_path(@user), class: "btn btn-outline-warning" %>
+    <br>
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+  <br><br>
+  <%= link_to t('link.user.to my page'), user_path(@user), class: "btn btn-outline-warning" %>
+</div>
