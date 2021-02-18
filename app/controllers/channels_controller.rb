@@ -19,7 +19,7 @@ class ChannelsController < ApplicationController
   end
 
   def show
-    @comments = @channel.comments
+    @comments = @channel.comments.order(created_at: :desc).page(params[:page]).per(10)
     @comment = @channel.comments.build
   end
 
