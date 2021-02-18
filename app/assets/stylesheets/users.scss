@@ -29,13 +29,28 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.user_image_ss {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 300px;
+  margin: auto;
+}
+.user_image_ss img {
+  max-width: 40px;
+  max-height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .follow_item {
   padding-right: 5%;
 }
 .follower_item {
   padding-left: 5%;
 }
-
 .follow_item p {
   padding-left: 20%;
 }

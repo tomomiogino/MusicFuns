@@ -1,10 +1,11 @@
 <%= form_with(model: [comment]) do |form| %>
   <div id="error_explanation"></div>
-  <div class="field">
-    <%= form.text_area :content, id: "comment_content_#{comment.id}" %>
-    <%= form.label :content %>
+  <div class="form-group">
+    <p class="mb-0"><%= form.label :content %></p>
+    <%= form.text_area :content, id: "comment_content_#{comment.id}", class: "form-control" %>
+
   </div>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary btn-sm" %>
   </div>
 <% end %>
