@@ -13,6 +13,7 @@
           <div class="media-body text-left pl-3 mt-1">
             <strong><%= comment.user.name %></strong>
         <% end %>
+            <small class="text-muted"><%= comment.updated_at.strftime('%Y/%m/%d %H:%M') %></small>
             <%= simple_format(comment.content) %>
             <div class="comment-content text-left pl-3" id ="this_comment_<%= comment.id %>"></div>
           </div>
