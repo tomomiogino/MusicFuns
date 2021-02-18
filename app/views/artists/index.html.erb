@@ -29,7 +29,7 @@
                 <div class="card-body col-sm-8">
                   <h5 class="card-title"><%= artist.name %></h5>
                   <div>
-                    <%= link_to t("link.artist.to page"), artist_path(artist), class: "btn btn-outline-primary" %>
+                    <%= link_to t("link.artist.to page"), artist_path(artist), class: "btn btn-outline-success" %>
                   </div>
                 </div>
               </div>
@@ -57,9 +57,9 @@
                   <h5 class="card-title"><%= searchartist.name %></h5>
                   <div>
                     <% if searchartist.images.any?%>
-                      <%= link_to t("link.artist.create page"),   new_artist_path(name: searchartist.name, image: image),   class: "btn btn-outline-primary" %>
+                      <%= link_to t("link.artist.create page"),   new_artist_path(name: searchartist.name, image: image),   class: "btn btn-success" %>
                     <% else %>
-                      <%= link_to t("link.artist.create page"),   new_artist_path(name: searchartist.name), class: "btn btn-  outline-primary" %>
+                      <%= link_to t("link.artist.create page"),   new_artist_path(name: searchartist.name), class: "btn btn-  success" %>
                     <% end %>
                   </div>
                 </div>
@@ -69,6 +69,9 @@
         <% end %>
       </div>
     <% else %>
+    <div class="row d-flex justify-content-end mr-5">
+      <%= page_entries_info @artists %>
+    </div>
       <div class="row justify-content-center">
         <% @artists.each do |artist| %>
           <div class="card col-auto ml-1 mt-1" style="width: 480px;">
@@ -83,12 +86,15 @@
               <div class="card-body col-sm-8">
                 <h5 class="card-title"><%= artist.name %></h5>
                 <div>
-                  <%= link_to t("link.artist.to page"), artist_path(artist), class: "btn btn-outline-primary" %>
+                  <%= link_to t("link.artist.to page"), artist_path(artist), class: "btn btn-outline-success" %>
                 </div>
               </div>
             </div>
           </div>
         <%end%>
+      </div><br>
+      <div class="row d-flex justify-content-center">
+        <%= paginate @artists %>
       </div>
     <% end %>
   </div>
