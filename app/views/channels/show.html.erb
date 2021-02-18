@@ -12,8 +12,13 @@
       <h4><%= t('view.comment.index') %></h4>
       <div id="notice"></div>
     </div>
+
+
     <div id="comments_area">
       <%= render partial: 'comments/index', locals: { comments: @comments, channel: @channel } %>
+    </div>
+    <div class="row d-flex justify-content-end pr-3">
+      <%= page_entries_info @comments %>
     </div>
     <div class="row d-flex justify-content-center">
       <%= paginate @comments %>
