@@ -25,10 +25,15 @@
     <% end %>
     <div class="form-group">
       <%= f.label :name %>
-      <%= f.text_field :name, placeholder: t('view.channel.example'), class:"form-control" %>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">＃</span>
+        </div>
+        <%= f.text_field :name, placeholder: t('view.channel.example'), class:"form-control" %>
+      </div>
     </div>
     <div class="text-center my-4">
-      <%= f.submit "チャンネルを作成", class:"btn btn-primary" %>
+      <%= f.submit t('submit.channel'), class:"btn btn-primary" %>
     </div>
   <% end %>
   <div>
