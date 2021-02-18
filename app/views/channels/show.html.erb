@@ -7,13 +7,11 @@
     <%= image_tag("default.png") %>
   <% end %>
   <br><br>
-  <div class="">
+  <div>
     <div class="container">
       <h4><%= t('view.comment.index') %></h4>
       <div id="notice"></div>
     </div>
-
-
     <div id="comments_area">
       <%= render partial: 'comments/index', locals: { comments: @comments, channel: @channel } %>
     </div>

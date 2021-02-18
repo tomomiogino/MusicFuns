@@ -276,14 +276,17 @@ ja:
   link:
     user:
       new: "新規登録"
+      to new: "新規登録画面へ"
       edit: "プロフィールを編集"
       not have an account: "登録がまだの方はこちら"
+      have an account: "登録済みの方はこちら"
       follow: "フォロー"
       unfollow: "フォロー解除"
       my page: "マイページ"
       to my page: "マイページへ戻る"
     session:
       login: "ログイン"
+      to login: "ログイン画面へ"
       log out: "ログアウト"
     artist:
       to page: "アーティストページへ"

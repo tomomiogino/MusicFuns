@@ -6,7 +6,7 @@ class ArtistsController < ApplicationController
 
   def index
     RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_SECRET_ID'])
-    @artists = Artist.all.page(params[:page]).per(7)
+    @artists = Artist.all.page(params[:page]).per(10)
     if params[:search].present?
       @searchartists = RSpotify::Artist.search(params[:search], market: 'JP')
     end
