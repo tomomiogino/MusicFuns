@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: session_params[:email].downcase)
     if user && user.authenticate(session_params[:password])
       session[:user_id] = user.id
-      redirect_to user_path(user.id), flash: {success: t('flash.success.session.create')}
+      redirect_to artists_path, flash: {success: t('flash.success.session.create')}
     else
       flash.now[:danger] = t('flash.alert.session.create')
       render :new
