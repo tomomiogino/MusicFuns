@@ -1,2 +1,11 @@
-<h1>Tops#index</h1>
-<p>Find me in app/views/tops/index.html.erb</p>
+<div class="top-wrapper">
+  <div class="container">
+    <h1 class="top_title">MusicFuns</h1>
+    <h5 class="top_sub">同じアーティストのファン同士<br>好きな話題で盛り上がりましょう！</h5>
+
+  </div>
+</div>
+<div class="row d-flex justify-content-center pt-5">
+  <span class="link_left"><%= link_to t('link.user.new'), new_user_path, class: "btn top-btn btn-lg" %></span>
+  <span class="link_right"><%= link_to t('link.session.login'), new_session_path, class: "btn top-btn btn-lg" %></span>
+</div>
