@@ -1,0 +1,118 @@
+html {
+  position: relative;
+  min-height: 100%;
+  font-size: 90%;
+  width: 100%;
+}
+body {
+  padding-top: 48px;
+  padding-bottom: 40px;
+  min-height: 100%;
+  text-align: center;
+}
+ul {
+  list-style: none;
+}
+.header_icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 300px;
+}
+.nav-link {
+  display: block;
+  padding: 0;
+  height:100%;
+  color: #fff;
+}
+.navbar-nav .nav-link:hover{
+color: #00ff00;
+}
+.navbar-brand {
+  font-size: 1.2rem;
+  font-family: impact;
+  color: #00ff00;
+}
+.navbar-brand:hover {
+  color: #fff;
+}
+.navbar {
+  background-color: rgba( 000, 000, 000, 0.8 );
+}
+.navbar-toggler {
+  border-color: #fff;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.nav-item {
+  padding-left: 15px;
+}
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+  background-color: rgba( 000, 000, 000, 0.8 );
+}
+.footer_content {
+  text-align: center;
+  color: #fff;
+  height: 40px;
+  line-height: 40px;
+}
+.container {
+  width: 95%;
+}
+.top-wrapper {
+  margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
+  min-height: 100%;
+  padding: 10rem 0 5rem 0;
+  background-color: black;
+  // background-image: image-url('top.jpg');
+  background-position: bottom;
+  background-size: cover;
+  color: white;
+  position: relative;
+}
+.top-wrapper::before {
+  background-color: rgba(0,0,0,0.8);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	content: ' ';
+}
+.top_title {
+  font-size: 9rem;
+  font-family: 'Baloo Bhaina', cursive;
+  font-weight: bold;
+  color: #fff;
+  margin: 0px;
+  text-shadow: 3px 3px 0 #008000, 6px 6px 0 #00ff00, 9px 9px 0 #00ff00;
+  -webkit-transform: skewY(-7deg);
+  -ms-transform: skewY(-7deg);
+  -moz-transform: skewY(-7deg);
+  -o-transform: skewY(-7deg);
+  transform: skewY(-7deg);
+}
+.top_sub {
+  padding-top: 5rem;
+  font-weight: bold;
+  color: #fff;
+  transform: skewY(0deg);
+}
+.link_left {
+  margin-right: 4rem;
+}
+.top-btn {
+  color: #fff;
+  background-color: #00ff00;
+  transform: skewY(0deg);
+}
+.top-btn:hover {
+  transform: translate(0, -2px);
+  color: #fff;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
+}

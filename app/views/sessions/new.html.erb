@@ -1,16 +1,21 @@
-<h2><%= t('view.session.login') %></h2>
-<br>
-<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
-  <div class="form-group row">
-    <%= f.label :email, t('view.session.email'), class: "control-label" %>
-    <%= f.text_field :email, class: 'form-control' %>
-  </div>
-  <div class="form-group row">
-    <%= f.label :password, t('view.session.password'), class: "control-label" %>
-    <%= f.password_field :password, class: 'form-control' %>
-  </div>
+<div class="page_item">
+  <h2><%= t('view.session.login') %></h2>
   <br>
-  <%= f.submit t('view.session.login'), class: 'btn btn-primary' %>
-<% end %>
-<br>
-<%= link_to t('link.user.not have an account'), new_user_path %>
+  <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+    <div class="form-group row">
+      <%= f.label :email, t('view.session.email'), class: "control-label" %>
+      <%= f.text_field :email, class: 'form-control' %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :password, t('view.session.password'), class: "control-label" %>
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+    <br>
+    <%= f.submit t('view.session.login'), class: 'btn btn-primary' %>
+  <% end %>
+  <br><br><br>
+  <p><%= t('link.user.not have an account') %></p>
+  <div>
+    <%= link_to t('link.user.to new'), new_user_path, class: "btn btn-outline-primary" %>
+  </div>
+</div>

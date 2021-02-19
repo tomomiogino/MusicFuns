@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
+  before_action :authenticate_user, except: [:new, :create]
+  before_action :restrict_login_user, only: [:new, :create]
 
   def index
   end

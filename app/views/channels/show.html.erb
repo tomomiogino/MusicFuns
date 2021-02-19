@@ -1,21 +1,30 @@
-<h3><%= @channel.artist.name %></h3>
-<h4><%= "# #{@channel.name}" %></h4>
-<% if @channel.artist.image.url.present? %>
-  <%= image_tag(@channel.artist.image.url) %>
-<% else %>
-  <%= image_tag("default.png") %>
-<% end %>
-
-<div class="container">
-  <p><%= t('view.comment.index') %></p>
-  <p id="notice"><%= notice %></p>
-  <!-- <div id="error_explanation"></div> -->
+<div class="page_item">
+  <h3><%= @channel.artist.name %></h3>
+  <h2><%= "# #{@channel.name}" %></h2><br>
+  <% if @channel.artist.image.url.present? %>
+    <%= image_tag(@channel.artist.image.url) %>
+  <% else %>
+    <%= image_tag("default.png") %>
+  <% end %>
+  <br><br>
+  <div>
+    <div class="container">
+      <h4><%= t('view.comment.index') %></h4>
+      <div id="notice"></div>
+    </div>
+    <div id="comments_area">
+      <%= render partial: 'comments/index', locals: { comments: @comments, channel: @channel } %>
+    </div>
+    <div class="row d-flex justify-content-end pr-3">
+      <%= page_entries_info @comments %>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <%= paginate @comments %>
+    </div>
+    <div id="error_explanation"></div>
+    <%= render partial: 'comments/form', locals: { comment: @comment, channel: @channel } %>
+  </div><br>
+  <div>
+    <%= link_to t('link.artist.to page'), artist_path(@channel.artist.id), class: "btn btn-outline-warning" %>
   </div>
-  <div id="comments_area">
-    <%= render partial: 'comments/index', locals: { comments: @comments, channel: @channel } %>
-  </div>
-  <div id="error_explanation"></div>
-  <%= render partial: 'comments/form', locals: { comment: @comment, channel: @channel } %>
 </div>
-
-<%= link_to t('link.artist.to page'), artist_path(@channel.artist.id) %>

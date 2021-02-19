@@ -1,94 +1,88 @@
-<h2><%= t('view.user.show user', user: @user.name) %></h2>
-<table class="table">
-  <tbody class="table show">
-    <div class="user_image">
-      <% if @user.image && @user.image.url %>
-        <%= image_tag(@user.image.url) %>
-      <% else %>
-        <%= image_tag("default.png") %>
-      <% end %>
+<div class="page_item">
+  <h2><%= t('view.user.show user', user: @user.name) %></h2>
+    <div class="card border-0">
+      <div class="user_image">
+        <% if @user.image && @user.image.url %>
+          <%= image_tag @user.image.url, class: "card-img-top" %>
+        <% else %>
+          <%= image_tag "default.png", class: "card-img-top" %>
+        <% end %>
+      </div>
+      <ul class="list-group list-group-flash">
+        <li class="list-group-item border-0 pb-0"><%= simple_format(@user.profile_comment) %></li>
+      </ul>
     </div>
-    <tr>
-      <th><%= User.human_attribute_name(:name) %></th>
-      <td><%= @user.name %></td>
-    </tr>
+  <% if current_user == @user %>
+    <%= link_to t('link.user.edit'), edit_user_path(@user), class: "btn btn-outline-primary" %>
+  <% else %>
+    <%= render 'follow_form', user: @user %>
+  <% end %>
+  <br><br>
 
-      <tr>
-        <th><%= User.human_attribute_name(:email) %></th>
-        <td><%= @user.email %></td>
-      </tr>
-
-    <tr>
-      <th><%= User.human_attribute_name(:profile_comment) %></th>
-      <td><%= @user.profile_comment %></td>
-    </tr>
-  </tbody>
-</table>
-<% if current_user == @user %>
-  <%= link_to t('link.user.edit'), edit_user_path(@user) %>
-<% else %>
-  <%= render 'follow_form', user: @user %>
-<% end %>
-<br>
-
-<div class="row">
-  <div class="col-6">
-    <h4><%= t('view.user.follow index') %></h4>
-    <div class="row justify-content-center">
-      <% @user.following.each do |follow_user| %>
-        <!-- <div class="col-3"> -->
-          <div class="profile_image_s">
-            <% if follow_user.image && follow_user.image.url %>
-              <%= image_tag(follow_user.image.url) %>
-            <% else %>
-              <%= image_tag("default.png") %>
+  <div class="row">
+    <div class="follow_item col-6">
+      <h4><%= t('view.user.follow index') %></h4>
+      <div class="row justify-content-center">
+        <% @user.following.each do |follow_user| %>
+          <div class="col-auto">
+            <%= link_to user_path(follow_user), class: "text-dark" do %>
+              <div class="user_image_s">
+                <% if follow_user.image && follow_user.image.url %>
+                  <%= image_tag(follow_user.image.url) %>
+                <% else %>
+                  <%= image_tag("default.png") %>
+                <% end %>
+              </div>
+              <%= follow_user.name %>
             <% end %>
           </div>
-          <%= "#{follow_user.name}さん" %>
-        <!-- </div> -->
-      <% end %>
-    </div>
+        <% end %>
+      </div>
 
-  </div>
-  <div class="col-6">
-    <h4><%= t('view.user.follower index') %></h4>
-    <div class="row justify-content-center">
-      <% @user.followers.each do |follower_user| %>
-        <!-- <div class="col-3"> -->
-          <div class="profile_image_s">
-            <% if follower_user.image && follower_user.image.url %>
-              <%= image_tag(follower_user.image.url) %>
-            <% else %>
-              <%= image_tag("default.png") %>
+    </div>
+    <div class="follower_item col-6">
+      <h4><%= t('view.user.follower index') %></h4>
+      <div class="row justify-content-center">
+        <% @user.followers.each do |follower_user| %>
+          <div class="col-auto">
+            <%= link_to user_path(follower_user), class: "text-dark" do %>
+              <div class="user_image_s">
+                <% if follower_user.image && follower_user.image.url %>
+                  <%= image_tag(follower_user.image.url) %>
+                <% else %>
+                  <%= image_tag("default.png") %>
+                <% end %>
+              </div>
+              <%= follower_user.name %>
             <% end %>
           </div>
-          <%= "#{follower_user.name}さん" %>
-        <!-- </div> -->
-      <% end %>
+        <% end %>
+      </div>
     </div>
+  </div><br><br>
+
+  <h4><%= t('view.user.fan artist') %></h4>
+  <br>
+  <div class="row justify-content-center">
+    <% @fans.each do |fan| %>
+      <% artist = Artist.find_by(id: fan.artist_id) %>
+      <div class="card col-auto ml-1 mt-1" style="max-width: 480px;">
+        <div class="row no-gutters">
+          <div class="col-sm-4">
+            <% if artist.image.url.present? %>
+              <%= image_tag artist.image.url, class: "card-img" %>
+            <% else %>
+              <%= image_tag "default.png", class: "card-img" %>
+            <% end %>
+          </div>
+          <div class="card-body col-sm-8">
+            <h5 class="card-title"><%= artist.name %></h5>
+            <div class="">
+              <%= link_to t('link.artist.to page'), artist_path(artist), class: "btn btn-outline-success" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
-
-<h4><%= t('view.user.fan artist') %></h4>
-<br>
-<% @fans.each do |fan| %>
-  <% artist = Artist.find_by(id: fan.artist_id) %>
-  <div class="index_item">
-    <div class="artist">
-      <p><%= artist.name %></p>
-    </div>
-    <div class="artist_image">
-      <% if artist.image.url.present? %>
-        <%= image_tag(artist.image.url) %>
-      <% else %>
-        <%= image_tag("default.png") %>
-      <% end %>
-    </div>
-    <!-- <% if @user.id == current_user.id %>
-      <%= link_to t('link.fan.destroy'), fan_path(id: fan.id), method: :delete, class: "btn btn-outline-danger" %>
-    <% end %> -->
-    <div class="link　btn-group">
-      <%= link_to t('link.artist.to page'), artist_path(artist), class: "btn btn-outline-primary" %>
-    </div>
-  </div>
-<% end %>

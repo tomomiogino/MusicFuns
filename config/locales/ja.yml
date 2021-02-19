@@ -232,6 +232,7 @@ ja:
       session:
         create: "ログインに失敗しました"
         login is needed: "ログインが必要です"
+        logged in: "ログイン済みです"
       artist:
         create: "アーティストページの作成に失敗しました"
       channel:
@@ -246,7 +247,7 @@ ja:
   view:
     user:
       new user: "新規登録"
-      show user: "%{user}さんのページ"
+      show user: "%{user}さん"
       edit user: "プロフィールを編集する"
       fan artist: "ファン登録中アーティスト"
       follow index: "フォロー一覧"
@@ -260,10 +261,14 @@ ja:
       search: "検索"
       search by artist: "アーティスト名で検索"
       search results: "検索結果"
-      no pages yet: "アーティストページがまだありません"
-      create page: "%{artist}のアーティストページを作成"
+      no pages yet: "アーティストページがまだない場合は作成しましょう！"
+      create page: "アーティストページ作成"
     channel:
       new: "新規チャンネル作成"
+      index: "チャンネル一覧"
+      no channels yet: "チャンネルがまだありません"
+      create a channel: "チャンネルを作ってファン同士好きな話題で盛り上がりましょう！"
+      example: "例) フリートーク, 情報交換, この間の配信ライブ観た人！・・・等々。 ファン同士で語りたいテーマを入力してください！"
     comment:
       index: "コメント一覧"
     fan:
@@ -271,19 +276,28 @@ ja:
   link:
     user:
       new: "新規登録"
+      to new: "新規登録画面へ"
       edit: "プロフィールを編集"
       not have an account: "登録がまだの方はこちら"
+      have an account: "登録済みの方はこちら"
       follow: "フォロー"
       unfollow: "フォロー解除"
+      my page: "マイページ"
+      to my page: "マイページへ戻る"
     session:
+      login: "ログイン"
+      to login: "ログイン画面へ"
       log out: "ログアウト"
     artist:
       to page: "アーティストページへ"
       create page: "アーティストページ作成"
+      index: "アーティスト一覧"
     fan:
       create: "ファン登録"
       destroy: "ファン登録解除"
     edit: "編集"
     destroy: "削除"
+    clear: "クリア"
   submit:
     comment: "投稿"
+    channel: "チャンネル作成"
