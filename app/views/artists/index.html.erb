@@ -59,7 +59,7 @@
                     <% if searchartist.images.any?%>
                       <%= link_to t("link.artist.create page"),   new_artist_path(name: searchartist.name, image: image),   class: "btn btn-success" %>
                     <% else %>
-                      <%= link_to t("link.artist.create page"),   new_artist_path(name: searchartist.name), class: "btn btn-  success" %>
+                      <%= link_to t("link.artist.create page"),   new_artist_path(name: searchartist.name), class: "btn btn-success" %>
                     <% end %>
                   </div>
                 </div>
