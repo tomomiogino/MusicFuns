@@ -233,6 +233,7 @@ ja:
         create: "ログインに失敗しました"
         login is needed: "ログインが必要です"
         logged in: "ログイン済みです"
+        Another user: "権限がありません"
       artist:
         create: "アーティストページの作成に失敗しました"
       channel:
