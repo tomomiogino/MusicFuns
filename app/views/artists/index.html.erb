@@ -17,7 +17,7 @@
       <div class="row justify-content-center">
         <% @searchartists.each do |searchartist| %>
           <% if artist = @artists.find_by(name: searchartist.name) %>
-            <div class="card col-auto ml-1 mt-1" style="width: 480px;">
+            <div class="card col-auto ml-1 mt-1" style="width: 480px;" id="registered_artist">
               <div class="row no-gutters">
                 <div class="col-sm-4">
                   <% if artist.image? %>
@@ -43,7 +43,7 @@
       <div class="row justify-content-center">
         <% @searchartists.each do |searchartist| %>
           <% unless @artists.find_by(name: searchartist.name) %>
-            <div class="card col-auto ml-1 mt-1" style="width: 480px;">
+            <div class="card col-auto ml-1 mt-1" style="width: 480px;" id="unregistered_artist">
               <div class="row no-gutters">
                 <div class="col-sm-4">
                   <% if searchartist.images.any?%>
