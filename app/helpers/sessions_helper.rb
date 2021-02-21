@@ -10,4 +10,8 @@ module SessionsHelper
   def restrict_login_user
     redirect_to artists_path, flash: {warning: t('flash.alert.session.logged in')} if logged_in?
   end
+
+  def ensure_correct_user
+    redirect_to artists_path, flash: {danger: t('flash.alert.session.Another user')} if current_user.id != params[:id].to_i
+  end
 end
