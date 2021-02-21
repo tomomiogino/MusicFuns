@@ -10,7 +10,6 @@ RSpec.describe 'アーティスト管理機能', type: :system do
       fill_in 'メールアドレス', with: 'test1@example.com'
       fill_in "パスワード", with: '123456'
       click_button 'ログイン'
-      expect(page).to have_content 'ログインしました！'
     end
     context 'アーティストページがまだない場合' do
       it 'ページ未作成のアーティストとして表示される' do
