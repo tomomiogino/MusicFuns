@@ -29,14 +29,21 @@
       <%= f.label :email, class: "control-label" %>
       <%= f.text_field :email, class: 'form-control' %>
     </div>
-    <div class="form-group row mr-5 ml-5">
-      <%= f.label :password, class: "control-label" %>
-      <%= f.password_field :password, class: 'form-control' %>
+
+    <div class="d-flex justify-content-start ml-5">
+      <a class="row btn btn-outline-secondary  ml-1" data-toggle="collapse" href="#collapse_content1" role="button" aria-expanded="false" aria-controls="collapse_content1">パスワードを変更する場合はこちらをクリック</a>
     </div>
-    <div class="form-group row mr-5 ml-5">
-      <%= f.label :password_confirmation, class: "control-label" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-    </div>
+    <div class="collapse" id="collapse_content1">
+      <div class="form-group row mr-5 ml-5">
+        <%= f.label :password, class: "control-label" %>
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
+      <div class="form-group row mr-5 ml-5">
+        <%= f.label :password_confirmation, class: "control-label" %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+      </div>
+    </div><br>
+
     <div class="form-group row mr-5 ml-5">
       <%= f.label :profile_comment, class: "control-label" %>
       <%= f.text_area :profile_comment, class: 'form-control' %>
