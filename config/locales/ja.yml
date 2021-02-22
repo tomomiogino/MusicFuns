@@ -253,6 +253,7 @@ ja:
       fan artist: "ファン登録中アーティスト"
       follow index: "フォロー一覧"
       follower index: "フォロワー一覧"
+      change password: "パスワードを変更する場合はこちらをクリック"
     session:
       login: "ログイン"
       email: "メールアドレス"
