@@ -22,7 +22,11 @@
       <%= paginate @comments %>
     </div>
     <div id="error_explanation"></div>
-    <%= render partial: 'comments/form', locals: { comment: @comment, channel: @channel } %>
+    <% if @fan.presence  %>
+      <%= render partial: 'comments/form', locals: { comment: @comment, channel: @channel } %>
+    <% else %>
+      <%= t('view.channel.require fan registration to post') %>
+    <% end %>
   </div><br>
   <div>
     <%= link_to t('link.artist.to page'), artist_path(@channel.artist.id), class: "btn btn-outline-warning" %>

@@ -271,6 +271,7 @@ ja:
       no channels yet: "チャンネルがまだありません"
       create a channel: "チャンネルを作ってファン同士好きな話題で盛り上がりましょう！"
       example: "例) フリートーク, 情報交換, この間の配信ライブ観た人！・・・等々。 ファン同士で語りたいテーマを入力してください！"
+      require fan registration to post: "コメントを投稿するにはファン登録が必要です。"
     comment:
       index: "コメント一覧"
     fan:

@@ -21,6 +21,7 @@ class ChannelsController < ApplicationController
   def show
     @comments = @channel.comments.order(created_at: :desc).page(params[:page]).per(10)
     @comment = @channel.comments.build
+    @fan = current_user.fans.find_by(artist_id: @channel.artist.id)
   end
 
   private
