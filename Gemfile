@@ -50,4 +50,4 @@ gem 'mini_magick'
 gem 'rspotify'
 gem 'kaminari'
 gem 'faker'
-
+gem 'fog-aws'
