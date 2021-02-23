@@ -1,4 +1,6 @@
 class TopsController < ApplicationController
-  def index
-  end
+  before_action :restrict_login_user
+
+  def index; end
+  
 end
