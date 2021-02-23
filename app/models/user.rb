@@ -12,6 +12,7 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 6 }, on: :create
   end
 
+  validates :password, length: { minimum: 6 }, allow_blank: true, on: :update
   validates :profile_comment, length: { maximum: 255 }
 
   before_validation { email.downcase! }
