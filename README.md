@@ -60,3 +60,6 @@ https://docs.google.com/spreadsheets/d/1__nubhpjCkzqDlt746cDpGtMPEZrJeU6qRB7qcpN
   * Spotify Web API
   * gem 'rspotify'  
   (アーティストページの作成/検索機能に使用)
+
+### AWS URL
+http://54.248.16.177/
